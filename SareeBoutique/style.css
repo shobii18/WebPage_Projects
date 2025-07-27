@@ -1,0 +1,210 @@
+/* style.css */
+:root {
+  --primary: #3E3B92;
+  --secondary: #F4F0EA;
+  --accent: #D36F4A;
+  --text: #333333;
+  --hover: #BA4A28;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--secondary);
+  color: var(--text);
+}
+
+/* === Navbar === */
+.navbar {
+  background: var(--primary);
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  color: var(--secondary);
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+  margin: 0;
+}
+
+.nav-links a {
+  color: var(--secondary);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* Mobile Nav Toggle Button */
+.nav-toggle {
+  background: transparent;
+  border: none;
+  font-size: 2em;
+  color: var(--secondary);
+  cursor: pointer;
+  display: none;
+}
+
+/* === Hero Section === */
+.hero {
+  text-align: center;
+  padding: 4em 1em;
+  background: url('assets/hero.jpg') center/cover no-repeat;
+  color: white;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 1em;
+  padding: 0.75em 1.5em;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background: var(--hover);
+}
+
+/* === Collections / Shop Grid === */
+.collections, .shop-gallery {
+  padding: 2em;
+  text-align: center;
+}
+
+.collection-grid, .product-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+
+.item, .product-card {
+  background: white;
+  padding: 1em;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  width: 200px;
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* === About / Contact === */
+.about-section, .contact-section {
+  padding: 2em;
+  text-align: center;
+}
+
+.about-image, .contact-image {
+  max-width: 3000px;
+  width: 500px;
+  border-radius: 8px;
+  margin-bottom: 1em;
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75em;
+  border: 1px solid var(--text);
+  border-radius: 5px;
+  font-size: 1em;
+  width: 100%;
+}
+
+.contact-form button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.75em;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: var(--hover);
+}
+
+/* === Footer === */
+footer {
+  background: var(--primary);
+  color: var(--secondary);
+  text-align: center;
+  padding: 1em;
+  font-size: 0.9em;
+}
+
+/* === Scroll to Top Button === */
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  font-size: 1.5em;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+}
+
+/* === Responsive Media Queries === */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: var(--primary);
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    padding: 1em;
+    border-radius: 5px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .collection-grid, .product-grid {
+    flex-direction: column;
+    align-items: center;
+    width: 80;
+  }
+
+  .item, .product-card {
+    width: 80;
+  }
+}
